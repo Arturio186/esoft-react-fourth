@@ -10,7 +10,8 @@ export default defineConfig({
       '#interfaces': '/src/interfaces',
       '#layouts': '/src/layouts',
       '#pages': '/src/pages',
-      '#routes': '/src/routes'
+      '#routes': '/src/routes',
+      '#store': '/src/store',
     }
   }
 })
