@@ -12,6 +12,7 @@ export default defineConfig({
       '#pages': '/src/pages',
       '#routes': '/src/routes',
       '#store': '/src/store',
+      '#utils': '/src/utils',
     }
   }
 })
