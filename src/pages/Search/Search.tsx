@@ -1,9 +1,11 @@
 import { FC } from 'react'
 
 const Search : FC = () => {
-  return (
-    <div>Search</div>
-  )
+    return (
+        <section className='content'>
+            <h2>Search</h2>
+        </section>
+    )
 }
 
 export default Search

@@ -10,7 +10,34 @@ aside {
     width: 15%;
 }
 
-.content {
+.container {
     width: 85%;
     padding: 20px;
+    
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+header {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+
+    font-size: 1.5rem;
+
+    .link {
+        padding: 15px 20px;
+        text-decoration: none;
+        color: #fff;
+        border-radius: 50px;
+
+        transition: all 0.3s ease;
+    }
+
+    .active {
+        color: #000;
+        background-color: #fff;
+    }
 }

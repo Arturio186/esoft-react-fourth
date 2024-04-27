@@ -38,7 +38,7 @@ const RatingSort : FC<IRatingSortProps> = ({ setDisplayFilms }) => {
             <div className="buttons">
                 <button
                     onClick={() => setAscending(ascending === 'ASC' ? 'DESC' : 'ASC')}
-                    className={`sortBtn ${ascending === 'ASC' || ascending === 'DESC' ? 'active' : ''}`}
+                    className={`sortBtn ${ascending === 'ASC' || ascending === 'DESC' ? 'enable' : ''}`}
                 >
                     {ascending === 'ASC' ? 'Сортировать ↑' : 'Сортировать ↓'}
                 </button>
