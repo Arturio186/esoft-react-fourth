@@ -6,9 +6,9 @@ import './FilmList.scss'
 import { RootState } from '#store/store'
 
 import FilmCard from '#components/FilmCard/FilmCard'
+import RatingSort from '#components/RatingSort/RatingSort'
 
 import IFilm from '#interfaces/IFilm'
-import RatingSort from '#components/RatingSort/RatingSort'
 
 const FilmList : FC = () => {
     const films = useSelector<RootState, IFilm[]>(state => state.films)

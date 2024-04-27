@@ -1,11 +1,8 @@
-import IFilm from '#interfaces/IFilm'
 import { FC } from 'react'
 
 import './Comments.scss'
 
-interface ICommentsProps {
-    film: IFilm
-}
+import ICommentsProps from '#interfaces/props/ICommentsProps'
 
 const Comments : FC<ICommentsProps> = ({ film }) => {
     return (

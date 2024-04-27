@@ -1,10 +1,13 @@
 import { FC } from 'react'
+import { useSelector } from 'react-redux'
 import { Outlet, NavLink } from 'react-router-dom'
 
 import './MainLayout.scss'
-import { MAIN_ROUTE, SEARCH_ROUTE } from '#utils/consts'
-import { useSelector } from 'react-redux'
+
 import { RootState } from '#store/store'
+
+import { MAIN_ROUTE, SEARCH_ROUTE } from '#utils/consts'
+
 import IUserState from '#interfaces/IUserState'
 
 const MainLayout : FC = () => {

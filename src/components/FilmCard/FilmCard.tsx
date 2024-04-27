@@ -1,16 +1,14 @@
-import IFilm from '#interfaces/IFilm'
 import { FC } from 'react'
-import FilmSVG from '../../assets/film.svg'
-
-import './FilmCard.scss'
-import FilmActions from '#components/FilmActions/FilmActions'
 import { useNavigate } from 'react-router-dom'
 
-interface IFilmProps {
-    film: IFilm
-}
+import FilmSVG from '../../assets/film.svg'
+import './FilmCard.scss'
 
-const FilmCard : FC<IFilmProps> = ({ film }) => {
+import FilmActions from '#components/FilmActions/FilmActions'
+
+import IFilmCardProps from '#interfaces/props/IFilmCardProps'
+
+const FilmCard : FC<IFilmCardProps> = ({ film }) => {
     const navigate = useNavigate()
 
     const openFilmPage = () => {

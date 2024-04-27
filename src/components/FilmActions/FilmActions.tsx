@@ -1,23 +1,18 @@
 import { FC } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 
 import './FilmActions.scss'
-import IFilm from '#interfaces/IFilm'
-import { useDispatch, useSelector } from 'react-redux'
+
 import { RootState } from '#store/store'
-
-import IUserState from '#interfaces/IUserState'
-
 import { addToFavorite, removeFromFavorite, addToWatch, removeFromWatch} from '#store/userSlice'
 
-interface IFilmActionsProps {
-    film: IFilm
-}
+import IUserState from '#interfaces/IUserState'
+import IFilmActionsProps from '#interfaces/props/IFilmActionsProps'
 
 const FilmActions : FC<IFilmActionsProps> = ({ film }) => {
     const user = useSelector<RootState, IUserState>(state => state.user)
     const dispatch = useDispatch()
-
-    // films.find(x => x.id === Number(id))
+    
     const isFavourite = user.favoriteFilms.find(x => x.id === film.id)
     const isWatch = user.toWatchFilms.find(x => x.id === film.id)
 

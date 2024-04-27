@@ -1,13 +1,15 @@
 import { FC, useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
-import { RootState } from '#store/store'
 
 import './RatingSort.scss'
+
+import { RootState } from '#store/store'
+
+import CloseButton from '#components/UI/CloseButton/CloseButton'
 
 import { TAscending } from '#interfaces/TAscending'
 import IFilm from '#interfaces/IFilm'
 import IRatingSortProps from '#interfaces/props/IRatingSortProps'
-import CloseButton from '#components/UI/CloseButton/CloseButton'
 
 const RatingSort : FC<IRatingSortProps> = ({ setDisplayFilms }) => {
     const films = useSelector<RootState, IFilm[]>(state => state.films)

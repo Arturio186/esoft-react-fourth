@@ -1,7 +1,8 @@
-import IButtonProps from '#interfaces/props/IButtonProps'
 import { FC } from 'react'
 
 import classes from './CloseButton.module.scss'
+
+import IButtonProps from '#interfaces/props/IButtonProps'
 
 const CloseButton : FC<IButtonProps> = ({ children, ...rest }) => {
     return (

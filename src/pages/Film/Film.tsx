@@ -1,15 +1,15 @@
 import { FC } from 'react'
-import { useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
+import { useParams } from 'react-router-dom'
 
 import './Film.scss'
 
 import { RootState } from '#store/store'
 
 import FilmActions from '#components/FilmActions/FilmActions'
+import Comments from '#components/Comments/Comments'
 
 import IFilm from '#interfaces/IFilm'
-import Comments from '#components/Comments/Comments'
 
 const Film : FC = () => {
     const { id } = useParams()
