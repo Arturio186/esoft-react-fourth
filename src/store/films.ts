@@ -9,7 +9,8 @@ export default [
             { name: 'Мэттью Макконахи', birthday: '04-11-1969' },
             { name: 'Чарли Ханнэм', birthday: '10-04-1980' }
         ],
-        categories: ['Криминал', 'Комедия', 'Боевик']
+        categories: ['Криминал', 'Комедия', 'Боевик'],
+        comments: []
     },
     { 
         id: 1,
@@ -21,7 +22,8 @@ export default [
             { name: 'Бенедикт Камбербэтч', birthday: '19-07-1976' },
             { name: 'Кира Найтли', birthday: '26-03-1985' }
         ],
-        categories: ['Биография', 'Драма', 'Триллер']
+        categories: ['Биография', 'Драма', 'Триллер'],
+        comments: []
     },
     { 
         id: 2,
@@ -33,7 +35,8 @@ export default [
             { name: 'Уилл Смит', birthday: '25-09-1968' },
             { name: 'Джейден Смит', birthday: '08-07-1998' }
         ],
-        categories: ['Драма', 'Биография']
+        categories: ['Драма', 'Биография'],
+        comments: []
     },
     { 
         id: 3,
@@ -45,7 +48,8 @@ export default [
             { name: 'Тим Роббинс', birthday: '16-10-1958' },
             { name: 'Морган Фриман', birthday: '01-06-1937' }
         ],
-        categories: ['Драма', 'Криминал']
+        categories: ['Драма', 'Криминал'],
+        comments: []
     },
     { 
         id: 4,
@@ -57,7 +61,8 @@ export default [
             { name: 'Леонардо ДиКаприо', birthday: '11-11-1974' },
             { name: 'Джозеф Гордон-Левитт', birthday: '17-02-1981' }
         ],
-        categories: ['Фантастика', 'Боевик', 'Триллер']
+        categories: ['Фантастика', 'Боевик', 'Триллер'],
+        comments: []
     },
     { 
         id: 5,
@@ -69,7 +74,8 @@ export default [
             { name: 'Вигго Мортенсен', birthday: '20-10-1958' },
             { name: 'Махершала Али', birthday: '16-02-1974' }
         ],
-        categories: ['Драма', 'Комедия', 'Биография']
+        categories: ['Драма', 'Комедия', 'Биография'],
+        comments: []
     },
     { 
         id: 6,
@@ -81,7 +87,8 @@ export default [
             { name: 'Джейсон Стэйтем', birthday: '26-07-1967' },
             { name: 'Брэд Питт', birthday: '18-12-1963' }
         ],
-        categories: ['Криминал', 'Комедия']
+        categories: ['Криминал', 'Комедия'],
+        comments: []
     },
     { 
         id: 7,
@@ -93,7 +100,8 @@ export default [
             { name: 'Курт Рассел', birthday: '17-03-1951' },
             { name: 'Стейси Кич', birthday: '04-04-1968' }
         ],
-        categories: ['Боевик', 'Фантастика']
+        categories: ['Боевик', 'Фантастика'],
+        comments: []
     },
     { 
         id: 8,
@@ -105,7 +113,8 @@ export default [
             { name: 'Жан Рено', birthday: '30-07-1948' },
             { name: 'Натали Портман', birthday: '09-06-1981' }
         ],
-        categories: ['Боевик', 'Драма', 'Криминал']
+        categories: ['Боевик', 'Драма', 'Криминал'],
+        comments: []
     },
     { 
         id: 9,
@@ -117,7 +126,8 @@ export default [
             { name: 'Майкл Дж. Фокс', birthday: '09-06-1961' },
             { name: 'Кристофер Ллойд', birthday: '22-10-1938' }
         ],
-        categories: ['Комедия', 'Приключения', 'Научная фантастика']
+        categories: ['Комедия', 'Приключения', 'Научная фантастика'],
+        comments: []
     },
     { 
         id: 10,
@@ -129,6 +139,7 @@ export default [
             { name: 'Рассел Кроу', birthday: '07-04-1964' },
             { name: 'Эд Харрис', birthday: '28-11-1950' }
         ],
-        categories: ['Драма', 'Биография']
+        categories: ['Драма', 'Биография'],
+        comments: []
     },
 ];

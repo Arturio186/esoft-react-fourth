@@ -8,4 +8,5 @@ export default interface IFilm {
     rating: number
     actors: IActor[],
     categories: string[]
+    comments: string[]
 }

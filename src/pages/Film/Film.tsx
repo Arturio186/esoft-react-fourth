@@ -2,9 +2,14 @@ import { FC } from 'react'
 import { useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
+import './Film.scss'
+
 import { RootState } from '#store/store'
 
+import FilmActions from '#components/FilmActions/FilmActions'
+
 import IFilm from '#interfaces/IFilm'
+import Comments from '#components/Comments/Comments'
 
 const Film : FC = () => {
     const { id } = useParams()
@@ -18,7 +23,30 @@ const Film : FC = () => {
     }
 
     return (
-        <div>{film.title}</div>
+        <section className='content'>
+            <div className="film__info">
+                <h2>{film.title}</h2>
+                <p className='year'>{film.year}</p>
+                <p className="genres">{film.categories.join(', ')}</p>
+                <p className='rating'>Рейтинг: {film.rating}</p>
+                <p className='description'>{film.description}</p>
+
+                <h3 className='actors__title'>Актёры</h3>
+                <div className='actors'>
+                    {film.actors.map((actor) => 
+                    <div key={actor.name} className="actor">
+                        <p>{actor.name}</p>
+                        <p>Дата рождения: {actor.birthday}</p>
+                    </div>
+                        
+                    )}
+                </div>
+                <FilmActions film={film} />
+            </div>
+            
+            <Comments film={film} />
+           
+        </section>
     )
 }
 

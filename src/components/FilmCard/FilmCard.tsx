@@ -4,17 +4,24 @@ import FilmSVG from '../../assets/film.svg'
 
 import './FilmCard.scss'
 import FilmActions from '#components/FilmActions/FilmActions'
+import { useNavigate } from 'react-router-dom'
 
 interface IFilmProps {
     film: IFilm
 }
 
 const FilmCard : FC<IFilmProps> = ({ film }) => {
+    const navigate = useNavigate()
+
+    const openFilmPage = () => {
+        navigate(`./films/${film.id}`)
+    }
+
     return (
         <div className='film'>
             <FilmActions film={film} />
             <img src={FilmSVG} alt='Film image' />
-            <p className='title'>{film.title}</p>
+            <p onClick={openFilmPage} className='title'>{film.title}</p>
             <p className='year'>{film.year}</p>
             <p className="genres">{film.categories.join(', ')}</p>
             <p className='rating'>Рейтинг: {film.rating}</p>
