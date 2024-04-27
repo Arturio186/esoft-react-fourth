@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { Provider } from 'react-redux'
-import './index.css'
+import './index.scss'
 
 import AppRouter from '#routes/AppRouter.tsx'
 import store from '#store/store'

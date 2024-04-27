@@ -6,6 +6,7 @@ const Main : FC = () => {
 
     return (
         <>
+            <h2>Все фильмы</h2>
             <FilmList />
         </>
     )

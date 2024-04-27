@@ -19,10 +19,6 @@
         font-weight: bold;
     }
 
-    .year {
-        font-size: 1.2rem;
-    }
-
     .actors__title {
         font-size: 1.4rem;
     }
@@ -32,11 +28,7 @@
         flex-direction: column;
     }
 
-    .actor__name {
-        font-size: 1.2rem;
-    }
-
-    .genres {
+    .actor__name, .genres, .year, .rating {
         font-size: 1.2rem;
     }
 }

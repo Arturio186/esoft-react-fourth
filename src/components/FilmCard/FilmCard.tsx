@@ -12,14 +12,15 @@ const FilmCard : FC<IFilmProps> = ({ film }) => {
     return (
         <div className='film'>
             <img src={FilmSVG} alt='Film image' />
-            <span className='title'>{film.title}</span>
-            <span className='year'>{film.year}</span>
-            <span className="genres">{film.categories.join(', ')}</span>
-            <span className='description'>{film.description}</span>
-            <span className='actors__title'>Актёры</span>
+            <p className='title'>{film.title}</p>
+            <p className='year'>{film.year}</p>
+            <p className="genres">{film.categories.join(', ')}</p>
+            <p className='rating'>Рейтинг: {film.rating}</p>
+            <p className='description'>{film.description}</p>
+            <p className='actors__title'>Актёры</p>
             <div className='actors'>
                 {film.actors.map((actor) => 
-                    <span key={actor.name} className='actor__name'>{actor.name}</span>
+                    <p key={actor.name} className='actor__name'>{actor.name}</p>
                 )}
             </div>
         </div>

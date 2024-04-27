@@ -1,20 +1,31 @@
-import { FC } from 'react'
+import { FC, useState } from 'react'
 import { useSelector } from 'react-redux'
 
 import './FilmList.scss'
 
 import { RootState } from '#store/store'
 
-import IFilm from '#interfaces/IFilm'
 import FilmCard from '#components/FilmCard/FilmCard'
+
+import IFilm from '#interfaces/IFilm'
+import RatingSort from '#components/RatingSort/RatingSort'
 
 const FilmList : FC = () => {
     const films = useSelector<RootState, IFilm[]>(state => state.films)
+    
+    const [displayFilms, setDisplayFilms] = useState<IFilm[]>(films)
 
     return (
-        <div className="films">
-            {films.map(film => <FilmCard key={film.id} film={film} />)}
-        </div>
+        <>
+            <RatingSort 
+                setDisplayFilms={setDisplayFilms}
+            /> 
+            
+            <div className="films">
+                {displayFilms.map(film => <FilmCard key={film.id} film={film} />)}
+            </div>
+        </>
+        
     )
 }
 
