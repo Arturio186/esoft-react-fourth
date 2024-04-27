@@ -5,7 +5,7 @@ import IFilm from "#interfaces/IFilm";
   
 const initialState: IFilm[] = films
 
-const counterSlice = createSlice({
+const filmsSlice = createSlice({
     name: 'films',
     initialState,
     reducers: {
@@ -15,6 +15,6 @@ const counterSlice = createSlice({
 
 export const {
     
-} = counterSlice.actions
+} = filmsSlice.actions
 
-export default counterSlice.reducer
+export default filmsSlice.reducer
