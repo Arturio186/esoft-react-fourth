@@ -3,13 +3,28 @@ import { Outlet, NavLink } from 'react-router-dom'
 
 import './MainLayout.scss'
 import { MAIN_ROUTE, SEARCH_ROUTE } from '#utils/consts'
+import { useSelector } from 'react-redux'
+import { RootState } from '#store/store'
+import IUserState from '#interfaces/IUserState'
 
 const MainLayout : FC = () => {
+    const user = useSelector<RootState, IUserState>(state => state.user)
+    
     return (
         <> 
             <aside>
-                <p className='aside__tiltle'>Избранное</p>
-                <p className='aside__tiltle'>Посмотреть позже</p>
+                <h2 className='aside__title'>Избранное</h2>
+                <ul>
+                    {user.favoriteFilms.map((film) => 
+                        <li key={film.id}>{film.title}</li>
+                    )}
+                </ul>
+                <h2 className='aside__title'>Посмотреть позже</h2>
+                <ul>
+                    {user.toWatchFilms.map((film) => 
+                        <li key={film.id}>{film.title}</li>
+                    )}
+                </ul>
             </aside>
             <div className="container">
                 <header>

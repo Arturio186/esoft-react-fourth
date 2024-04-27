@@ -3,6 +3,7 @@ import { FC } from 'react'
 import FilmSVG from '../../assets/film.svg'
 
 import './FilmCard.scss'
+import FilmActions from '#components/FilmActions/FilmActions'
 
 interface IFilmProps {
     film: IFilm
@@ -11,6 +12,7 @@ interface IFilmProps {
 const FilmCard : FC<IFilmProps> = ({ film }) => {
     return (
         <div className='film'>
+            <FilmActions film={film} />
             <img src={FilmSVG} alt='Film image' />
             <p className='title'>{film.title}</p>
             <p className='year'>{film.year}</p>
