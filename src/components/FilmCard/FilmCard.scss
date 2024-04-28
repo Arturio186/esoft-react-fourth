@@ -1,0 +1,45 @@
+.film {
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+
+    border: 2px solid #fff;
+    border-radius: 32px;
+
+    text-align: center;
+
+    img { 
+        width: 80%;
+    }
+
+    .title {
+        font-size: 2.1rem;
+        font-weight: bold;
+
+        text-decoration: none;
+        color: #fff;
+
+        transition: color 0.3s ease;
+
+        &:hover {
+            cursor: pointer;
+            color: #ff8282;
+        }
+        
+    }
+
+    .actors__title {
+        font-size: 1.4rem;
+    }
+
+    .actors {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .actor__name, .genres, .year, .rating {
+        font-size: 1.2rem;
+    }
+}

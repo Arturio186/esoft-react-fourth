@@ -1,0 +1,53 @@
+.comment__form {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    gap: 15px;
+
+    h2 {
+        margin: 0;
+    }
+
+    button {
+        padding: 15px 25px;
+        font-size: 1.2rem;
+        width: 20%;
+
+        border-radius: 20px;
+
+        background-color: #fff;
+
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: #ebebeb;
+            cursor: pointer;
+        }
+    }
+
+    textarea {
+        padding: 10px 20px;
+        width: 60%;
+        height: 100px;
+        font-size: 1.4rem;
+
+        border: none;
+        outline: none;
+        resize: none;
+
+        &:active, &:focus {
+            border: none;
+        }
+    }
+
+    .form__error {
+        font-size: 1.2rem;
+        color: #ff4b4b;
+    }
+}
+

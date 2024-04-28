@@ -1,0 +1,14 @@
+.closeBtn {
+    color: #db0000;
+    border: none;
+    background-color: transparent;
+    font-weight: 700;
+    font-size: 2rem;
+
+    transition: transform 0.3s ease;
+
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.2);
+    }
+}

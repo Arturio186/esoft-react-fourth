@@ -1,0 +1,25 @@
+.actions {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+    svg {
+        width: 20%;
+        height: auto;
+
+        transition: transform 0.3s ease;
+
+        &:hover {
+            cursor: pointer;
+            transform: scale(1.1);
+        }
+    }
+
+    .active__favourite {
+        fill: #d60000
+    }
+
+    .active__time {
+        fill: #00459e
+    }
+}
