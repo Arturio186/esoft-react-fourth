@@ -75,7 +75,7 @@ const FilmList : FC = () => {
             />
             
             <div className="films">
-                {sortedAndFilteredFilms.map(film => <FilmCard key={film.id} film={film} />)}
+                {sortedAndFilteredFilms?.map(film => <FilmCard key={film.id} film={film} />)}
             </div>
         </>
         
