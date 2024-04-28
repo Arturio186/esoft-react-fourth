@@ -1,0 +1,13 @@
+.comments__container {
+    .comments {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        
+    }
+
+    h2 {
+        margin: 15px 0;
+    }
+}
+

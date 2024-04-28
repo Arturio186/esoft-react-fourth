@@ -1,0 +1,25 @@
+.related__films {
+    h2 {
+        margin: 15px 0;
+    }
+
+    .film_links {
+        display: flex;
+        gap: 10px;
+    
+        .film__link {
+            font-size: 1.2rem;
+    
+            text-decoration: none;
+            color: #fff;
+    
+            transition: color 0.3s ease;
+    
+            &:hover {
+                cursor: pointer;
+                color: #ff8282;
+            }
+        }
+    }
+}
+

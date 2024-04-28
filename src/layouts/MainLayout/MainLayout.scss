@@ -12,7 +12,7 @@ aside {
     ul {
         display: flex;
         flex-direction: column;
-        gap: 5px;
+        gap: 15px;
         font-size: 1.2rem;
         
         margin-bottom: 20px;
@@ -21,6 +21,29 @@ aside {
     .aside__title {
         font-size: 1.7rem;
         margin-bottom: 5px;
+    }
+
+    .film__link {
+        font-size: 1.4rem;
+
+        text-decoration: none;
+        color: #fff;
+
+        transition: color 0.3s ease;
+
+        
+
+        &:hover {
+            cursor: pointer;
+            color: #ff8282;
+        }
+    }
+
+    .active {
+        padding: 5px 10px;
+        background-color: #fff;
+        color: #000;
+        border-radius: 16px;
     }
 }
 

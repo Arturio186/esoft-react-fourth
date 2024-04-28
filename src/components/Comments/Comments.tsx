@@ -2,6 +2,8 @@ import { FC } from 'react'
 
 import './Comments.scss'
 
+import Comment from '#components/Comment/Comment'
+
 import ICommentsProps from '#interfaces/props/ICommentsProps'
 
 const Comments : FC<ICommentsProps> = ({ film }) => {
@@ -12,7 +14,7 @@ const Comments : FC<ICommentsProps> = ({ film }) => {
                 <p>Комментарии отсутсвуют</p>
                 :
                 <div className="comments">
-                    {film.comments.map((comment) => <p key={comment}>{comment}</p>)}
+                    {film.comments.map((comment) => <Comment key={comment}>{comment}</Comment>)}
                 </div>
             }
         </section>

@@ -10,6 +10,8 @@ import { MAIN_ROUTE, SEARCH_ROUTE } from '#utils/consts'
 
 import IUserState from '#interfaces/IUserState'
 
+//  <NavLink to={`./films/${film.id}`} className='title'>{film.title}</NavLink>
+
 const MainLayout : FC = () => {
     const user = useSelector<RootState, IUserState>(state => state.user)
     
@@ -19,13 +21,21 @@ const MainLayout : FC = () => {
                 <h2 className='aside__title'>Избранное</h2>
                 <ul>
                     {user.favoriteFilms.map((film) => 
-                        <li key={film.id}>{film.title}</li>
+                        <li key={film.id}>
+                            <NavLink to={`/films/${film.id}`} className='film__link'>
+                                {film.title}
+                            </NavLink>
+                        </li>
                     )}
                 </ul>
                 <h2 className='aside__title'>Посмотреть позже</h2>
                 <ul>
                     {user.toWatchFilms.map((film) => 
-                        <li key={film.id}>{film.title}</li>
+                        <li key={film.id}>
+                            <NavLink to={`/films/${film.id}`} className='film__link'>
+                                {film.title}
+                            </NavLink>
+                        </li>
                     )}
                 </ul>
             </aside>
