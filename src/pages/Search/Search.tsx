@@ -1,23 +1,30 @@
 import { RootState } from '#store/store'
-import React, { FC, useState, useMemo } from 'react'
+import { FC, useState, useMemo } from 'react'
 import { useSelector } from 'react-redux'
 import Select, { MultiValue } from 'react-select'
+
+import useMockFetching from '#hooks/useMockFetch'
 
 import './Search.scss'
 
 import FilmCard from '#components/FilmCard/FilmCard'
+import Loader from '#components/UI/Loader/Loader'
 
 import filterOptions from '#utils/filterOptions'
 
 import IFilm from '#interfaces/IFilm'
 
+
 const Search : FC = () => {
     const [search, setSearch] = useState<string>('')
     const [genres, setGenres] = useState<MultiValue<{value: string, label: string}>>()
+
     const films = useSelector<RootState, IFilm[]>(state => state.films)
 
+    const { loading, error, data: fetchFilms } = useMockFetching<IFilm[]>(films)
+
     const searchedAndFilteredFilms = useMemo(() => {
-        return films.filter((film) => {
+        return fetchFilms?.filter((film) => {
             if (!film.title.toLowerCase().includes(search.toLowerCase()))
                 return false
             
@@ -31,7 +38,15 @@ const Search : FC = () => {
             
             return isGood
         })
-    }, [search, genres])
+    }, [search, genres, fetchFilms])
+
+    if (loading) {
+        return <Loader />
+    }
+
+    if (error) {
+        return <p>Ошибка загрузки данных: {error}</p>
+    }
 
     return (
         <section className='content'>
@@ -52,7 +67,7 @@ const Search : FC = () => {
                 />
             </form>
             <div className="films">
-                {searchedAndFilteredFilms.map(film => <FilmCard key={film.id} film={film} />)}
+                {searchedAndFilteredFilms?.map(film => <FilmCard key={film.id} film={film} />)}
             </div>
         </section>
     )

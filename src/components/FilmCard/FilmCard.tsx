@@ -13,7 +13,7 @@ const FilmCard : FC<IFilmCardProps> = ({ film }) => {
         <div className='film'>
             <FilmActions film={film} />
             <img src={FilmSVG} alt='Film image' />
-            <NavLink to={`./films/${film.id}`} className='title'>{film.title}</NavLink>
+            <NavLink to={`/films/${film.id}`} className='title'>{film.title}</NavLink>
             <p className='year'>{film.year}</p>
             <p className="genres">{film.categories.join(', ')}</p>
             <p className='rating'>Рейтинг: {film.rating}</p>

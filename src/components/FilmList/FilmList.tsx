@@ -1,6 +1,7 @@
 import { FC, useState, useEffect, useMemo } from 'react'
 import { useSelector } from 'react-redux'
 import Select, { MultiValue } from 'react-select'
+import useMockFetching from '#hooks/useMockFetch'
 
 import './FilmList.scss'
 
@@ -8,6 +9,7 @@ import { RootState } from '#store/store'
 
 import FilmCard from '#components/FilmCard/FilmCard'
 import RatingSortButton from '#components/RatingSortButton/RatingSortButton'
+import Loader from '#components/UI/Loader/Loader'
 
 import filterOptions from '#utils/filterOptions'
 
@@ -18,17 +20,18 @@ import { TAscending } from '#interfaces/TAscending'
 const FilmList : FC = () => {
     const films = useSelector<RootState, IFilm[]>(state => state.films)
 
+    const { loading, error, data: fetchFilms } = useMockFetching<IFilm[]>(films)
+
     const [ascending, setAscending] = useState<TAscending>(null)
     const [genres, setGenres] = useState<MultiValue<{value: string, label: string}>>()
 
     const sortedAndFilteredFilms = useMemo(() => {
-        const result = films.filter((film) => {
+        const result = fetchFilms?.filter((film) => {
             let isGood = true
             
             genres?.forEach((genre) => {
                 if (!film.categories.includes(genre.value)) {
                     isGood = false
-                    console.log(`${film.title} не имеет ${genre.value}`)
                 }
             })
             
@@ -37,15 +40,23 @@ const FilmList : FC = () => {
 
         switch (ascending) {
             case 'ASC':
-                result.sort((a, b) => a.rating - b.rating)
+                result?.sort((a, b) => a.rating - b.rating)
                 break
             case 'DESC':
-                result.sort((a, b) => b.rating - a.rating)
+                result?.sort((a, b) => b.rating - a.rating)
                 break
         }
 
         return result
-    }, [genres, ascending])
+    }, [genres, ascending, fetchFilms])
+
+    if (loading) {
+        return <Loader />
+    }
+
+    if (error) {
+        return <p>Ошибка загрузки данных: {error}</p>
+    }
     
 
     return (
